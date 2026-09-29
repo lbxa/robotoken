@@ -22,4 +22,4 @@ Run commands from `website/` using Bun: `bun install`, `bun run dev`, `bun run b
 
 Preserve the distinction between scenario assumptions and measured evidence. The 2T target is an illustrative stress assumption, not GPT-3's historical training budget or a validated robotics capability threshold. Costs are in constant 2026 US dollars and exclude training compute. Keep all tables and caveats synchronized with the manuscript.
 
-Use Lucas as the author, as supplied in the manuscript. The report is a preprint without an assigned arXiv identifier. Do not infer affiliations from the site's former template. Update the nearest README changelog when durable project decisions change.
+Use Lucas Barbosa as the author and NYU as the affiliation, as explicitly supplied by the author. The report is a preprint without an assigned arXiv identifier. Do not add departments or other affiliations from the site's former template. Update the nearest README changelog when durable project decisions change.

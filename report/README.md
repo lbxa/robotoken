@@ -1,7 +1,7 @@
 # Robotoken report
 
 **What Would a GPT-3-Scale Robotics Dataset Cost?**  
-Lucas · 29 September 2026 · https://robotoken.lbxa.net
+Lucas Barbosa · NYU · 29 September 2026 · https://robotoken.lbxa.net
 
 `robotoken.tex` is the authoritative, self-contained manuscript. It includes its bibliography, the Matplotlib-generated PGF figure, and the arXiv-style package with its MIT license notice. No other source file is required to compile it. `robotoken.pdf` is the publication PDF.
 
@@ -39,4 +39,4 @@ The embedded style derives from [George Kour's arxiv-style](https://github.com/k
 - Website publication copies only the PDF; the source is retained locally for editing and is not a public download option.
 - Replaced the sample report with the supplied Robotoken manuscript, preserving its analysis, equations, tables, original figure, and sources.
 - Kept the bibliography and style embedded so the source remains portable and works in the built-in editor.
-- Added Robotoken branding and the canonical website URL; retained the supplied author name Lucas.
+- Added Robotoken branding and the canonical website URL. Use the author-supplied name Lucas Barbosa and affiliation NYU in the title block and publication metadata.

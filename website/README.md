@@ -1,6 +1,6 @@
 # Robotoken website
 
-Research website for **What Would a GPT-3-Scale Robotics Dataset Cost?**, a preprint by Lucas. Production URL: https://robotoken.lbxa.net.
+Research website for **What Would a GPT-3-Scale Robotics Dataset Cost?**, a preprint by Lucas Barbosa (NYU). Production URL: https://robotoken.lbxa.net.
 
 The Astro site retains the original template's quiet academic layout. Ordered MDX sections contain the full report narrative, equations, assumptions, tables, references, and citation. The authoritative manuscript is `../report/robotoken.tex`.
 
@@ -48,10 +48,11 @@ For CI, provide `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` as secrets, t
 
 ### 2026-09-29
 
+- Omit the browser favicon; retain the shared infinity icon in the page header.
 - Deploy the static Astro output with Bun and Wrangler to the `robotoken` Worker and `robotoken.lbxa.net`. Keep report compilation separate so deployment uses the reviewed PDF and does not require a local TeX installation.
 - Render the figure with Matplotlib, serve SVG for sharp typography, and use a separate narrow layout instead of shrinking the desktop figure's labels. Plot-specific changes must not alter the research template's header or spacing.
 - The original research template's styling and spacing are fixed across projects, including its exact infinity icon and header layout. Change project details and manuscript content only; retain the original widths, typography, title rules, author/button spacing, section gaps, and single-column contents list.
 - Offer PDF and BibTeX downloads only. Keep the editable LaTeX source in `report/` and exclude it from public assets and the publication copy step.
 - Reset the copied project to Robotoken; only the template's visual layout is retained. Previous paper text, affiliations, figures, downloads, and project identities are removed.
-- Preserve the manuscript's author as Lucas and describe it as a preprint. No arXiv identifier or institutional affiliation has been supplied for this report.
+- Use the author-supplied name Lucas Barbosa and affiliation NYU consistently with the manuscript and citation metadata. Describe the report as a preprint; no arXiv identifier has been supplied.
 - Treat token-to-hour conversions as accounting sensitivities, not measured capability targets; costs exclude training compute.

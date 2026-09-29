@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite the Robotoken preprint when using this work."
+title: Robotoken
+authors:
+  - given-names: Lucas
+    family-names: Barbosa
+    affiliation: NYU
+repository-code: "https://github.com/lbxa/robotoken"
+url: "https://robotoken.lbxa.net"
+license: MIT
+preferred-citation:
+  type: report
+  title: "What Would a GPT-3-Scale Robotics Dataset Cost?"
+  authors:
+    - given-names: Lucas
+      family-names: Barbosa
+      affiliation: NYU
+  year: 2026
+  month: 9
+  url: "https://robotoken.lbxa.net"
+  notes: "Preprint. Sources reviewed through 28 September 2026."
