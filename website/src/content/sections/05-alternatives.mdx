@@ -1,0 +1,43 @@
+---
+order: 5
+title: Earlier estimates and the strongest counterargument
+slug: alternatives
+---
+
+### Two closely matched blog estimates
+
+[Chris Paxton (June 2025)](#ref-paxton) starts from two trillion tokens at 10 useful frames/second. In continuous robot-years, this is:
+
+$$
+\frac{2\times10^{12}}{10\times3{,}600\times24\times365.25}=6{,}338.
+$$
+
+His utilization adjustment rounds the requirement to roughly 70,000 robot-years. He discusses a possible \$1B 1,000-robot collection project and explicitly identifies Tesla and Figure as potential funders. His token target and productivity penalty are thought-experiment inputs, not measured scaling requirements.
+
+[Rayan Malik (August 2025)](#ref-malik) assumes 1.1T tokens, 8 Hz, three tokens per transition and 600 retained hours per robot-year:
+
+$$
+\frac{1.1\times10^{12}}{8\times3\times3{,}600\times600}=21{,}219\text{ robot-years}.
+$$
+
+At 5,000 robots this takes 4.24 years. His \$550M initial equipment plus \$323M annual operations imply $0.550+0.323(4.244)=1.92$ billion US dollars. However, one supervisor per ten robots describes supervised autonomy, not one-to-one teleoperation. His parameter/token scaling assumption does not identify a robotics capability threshold. These estimates motivate billions in spending, but do not demonstrate single-company impossibility.
+
+### Current alternatives already weaken the all-teleoperation premise
+
+These are present-day observations, not assumptions about future breakthroughs: [Figure's Index](#ref-index) reports 16M uploaded human videos and \$15M in creator payouts (August 2026), but does not disclose cumulative accepted hours, preventing a defensible dollar-per-retained-hour calculation.
+
+[Figure subsequently reports](#ref-helix) success improving from 9% to 56% on three behaviors across 30 unseen homes after Index pretraining, with robot adaptation data held fixed. Those company-reported results concern environment generalization on selected behaviors, not arbitrary unseen tasks. [Dyna-2](#ref-dyna) reports over one million human-video hours. [1X](#ref-onex) reports 900 human-video hours and 70 hours of robot fine-tuning, alongside a separate inverse-dynamics model trained on 400 robot hours. Do not omit that additional robot-data dependency or assume those datasets are disjoint. None establishes a universal human-to-robot exchange rate.
+
+### Where the human harness argument becomes testable
+
+Let $\eta$ be target-specific robot-equivalent learning value per retained human hour, $c_H$ the fully loaded human-hour cost, and $s$ the fraction of required effective experience replaced. A simple mixture model is:
+
+$$
+C_{\mathrm{mix}}=H\left[(1-s)c+s\frac{c_H}{\eta}\right]+C_{\mathrm{transfer}}.
+$$
+
+Ignoring transfer overhead only for the marginal comparison, human collection is cheaper if $\eta>c_H/c$. For an *illustrative, unmeasured* $c_H=20$ US dollars, the base threshold is $\eta>20/218.75=0.0914$. Thus even one-tenth the learning value could be competitive—if experimentally demonstrated and if transfer costs are small. Wearables record human motion and observations; they do not directly record the target robot's joint state, actuator commands or contact dynamics. Calling this robot proprioception would overstate what is acquired.
+
+### Defensible conclusion
+
+<Highlight>Paying for tens of millions of robot-hours through dedicated operators can demand a multibillion-dollar program.</Highlight> That supports investigating human collection, autonomous practice, simulation and existing pretrained models. It does not establish that one company cannot reach general robotics. The pivotal missing evidence is the relationship between diverse retained experience and a predefined held-out capability benchmark, followed by measured retention and transfer costs. Counting tokens alone cannot supply that evidence.

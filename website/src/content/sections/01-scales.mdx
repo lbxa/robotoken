@@ -1,0 +1,23 @@
+---
+order: 1
+title: Public data scales
+slug: data-scales
+---
+
+<figure>
+  <a href="/figures/scales-cost.svg" target="_blank" rel="noopener noreferrer" aria-label="Open the data scales and acquisition cost figure at full size">
+    <picture>
+      <source media="(max-width: 640px)" srcSet="/figures/scales-cost-mobile.svg" width="864" height="2112" />
+      <img src="/figures/scales-cost.svg" width="1524" height="1488" alt="Three panels compare model pretraining exposures, public robot interaction hours, and five-year acquisition costs. GPT-3: 0.3 trillion exposures; DeepSeek-V3: 14.8T; Qwen3: 36T; DeepSeek-V4.1-Flash: 45T. DROID: 350 hours; AgiBot World: 2,976.4 hours. The 2T accounting scenario maps to 55.6 million hours and $12.2 billion at the base rate of $219 per hour. Low and high cost scenarios are $55 and $800 per hour, not confidence bounds." loading="lazy" decoding="async" />
+    </picture>
+  </a>
+  <figcaption>Public data scales and illustrative acquisition cost. Open the figure to inspect it at full size.</figcaption>
+</figure>
+
+**A: Language-model training scale.** Developer-reported model pretraining exposures, before unquantified post-training ([GPT-3](#ref-gpt3), [DeepSeek-V3](#ref-deepseekv3), [Qwen3](#ref-qwen3), [DeepSeek-V4.1-Flash](#ref-deepseekv41)).
+
+**B: Public robot datasets.** Reported robot interaction hours for selected public releases: [DROID](#ref-droid) (350 hours) and [AgiBot World](#ref-agibot) (2,976.4 hours). These totals are not unique examples or comparable measures of learning, and the releases are not an industry census. [Dyna-2](#ref-dyna) separately reports over one million hours of human video; no robot-hour equivalence is assumed.
+
+**C: Acquisition cost.** The solid blue line gives the base five-year estimate of \$219 per retained hour. Pale shading spans the low and high cost scenarios of \$55 and \$800 per hour, with dashed boundaries and direct labels; it is not a confidence interval. Dotted horizontal lines mark illustrative \$1B and \$10B budgets. The amber diamond marks the selected 2T accounting scenario: 55.6 million retained robot-hours and \$12.2B at the base rate, assuming 10 Hz, one pass and all-new robot data. This is not a capability threshold; model training compute is excluded.
+
+**Reading the comparison.** The selected 2T reference maps mechanically to 56 million hours; at base rates, collecting that additional private corpus costs about \$12B and requires about 13,900 stations over five years. Illustrative \$1B and \$10B budgets buy about 4.6M and 46M retained hours. Applying the same convention to the 45T disclosure gives 1.25B hours and about \$270B at base cost. These conversions do not establish a robotics capability target; public dataset durations are scale references, with different filtering, diversity and collection costs.

@@ -1,0 +1,27 @@
+---
+order: 2
+title: Define the milestone before counting data
+slug: milestone
+---
+
+The intended capability is broad manipulation: adapting to unfamiliar tasks, objects and environments from instructions or a few demonstrations. This excludes a separate estimate for humanoid locomotion. No source reviewed establishes how many hours deliver this capability, or a validated equivalence between robotics and GPT-3. GPT-3's actual training budget was **300 billion token exposures**, sampled from a corpus totaling about 499 billion tokens; some subsets were reused and others only partly sampled ([Brown et al.](#ref-gpt3)). Two trillion is therefore a stress assumption, 6.67 times GPT-3's exposure count, not its historical training requirement.
+
+### Economic primitive
+
+Use one retained hour of newly collected, nonduplicated robot experience: synchronized observations, robot state, actions and outcomes, with task/environment metadata. Retention requires rights, synchronization and quality checks; it does not guarantee novel skills or statistical independence. Useful failures may be retained. Repeated views and training epochs do not constitute new physical experience.
+
+### Optional token bridge
+
+Define one *accounting transition* as an observation–action–next-state record at $f=10$ Hz. This is a convenient convention borrowed from a [prior estimate](#ref-paxton), not an assertion that 100 ms of motion contains one language token's information. Do not multiply the acquired experience by camera count, image patches or joint dimensions. For a token-exposure target $T$, mean reuse $e$ and residual real-data share $\alpha$ after other sources:
+
+$$
+H=\frac{\alpha T}{3{,}600\,f\,e}.
+$$
+
+At $\alpha=e=1$ and $f=10$, 300 billion token exposures map to **8.333 million hours**, and two trillion map to **55.556 million hours**.
+
+This bridge is not invariant to tokenization. [FAST](#ref-fast) encodes a one-second shirt-folding action chunk in an average of 53 tokens versus 700 with per-dimension binning, at comparable reconstruction accuracy. Literal token parity would change the inferred data requirement by $700/53=13.2$ times without adding physical experience. Accordingly, the report also prices hours directly.
+
+### Existing ecosystem
+
+Reusable public datasets and internet-pretrained models carry zero incremental acquisition charge here. Their transfer benefit is allowed through $\alpha$, but cannot be assigned an evidence-based universal discount. The main tables price an assumed *additional private corpus*. They are not a claim that every company must acquire that corpus.

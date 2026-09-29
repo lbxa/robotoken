@@ -1,0 +1,54 @@
+---
+order: 4
+title: Program totals and sensitivity
+slug: program-totals
+---
+
+<div className="table-scroll" role="region" aria-label="Five-year acquisition costs in billions of US dollars" tabIndex={0}>
+
+| Retained experience | Low (\$B) | Base (\$B) | High (\$B) | Base stations / operator FTEs |
+| :--- | ---: | ---: | ---: | ---: |
+| 1 million hours | 0.055 | 0.219 | 0.800 | 250 |
+| 10 million hours | 0.550 | 2.188 | 8.000 | 2,500 |
+| 100 million hours | 5.500 | 21.875 | 80.000 | 25,000 |
+| 300B proxy: 8.333 million hours | 0.458 | 1.823 | 6.667 | 2,084 |
+| 2T proxy: 55.556 million hours | 3.056 | 12.153 | 44.444 | 13,889 |
+
+</div>
+
+The first three rows are illustrative acquisition programs, not capability forecasts. Totals use unrounded hours and fractional fleet equivalents; physical station/headcount requirements are rounded up. At one shift per station, operator FTEs equal stations; support staff are budgeted in $o$.
+
+For the two-trillion case, the working is:
+
+$$
+H=\frac{2\times10^{12}}{3{,}600\times10}=55{,}555{,}556\text{ hours},
+$$
+
+$$
+S=\frac{55{,}555{,}556}{4{,}000}\simeq13{,}889,\qquad C=H\times218.75=\$12.153\text{ billion}.
+$$
+
+Its cost components are **\$6.250B operator compensation + \$2.083B other operations + \$2.778B equipment purchases + \$1.042B maintenance**. This makes the labor burden, rather than just the price of robots, explicit.
+
+### Change one assumption at a time
+
+The following starts from the two-trillion base case; no savings are multiplied together.
+
+<div className="table-scroll" role="region" aria-label="One-at-a-time sensitivity analysis" tabIndex={0}>
+
+| Change from base | \$/retained hour | \$ billion |
+| :--- | ---: | ---: |
+| None | 218.75 | 12.15 |
+| Three staffed shifts: $A=6{,}000$ | 172.92 | 9.61 |
+| Retention $u=60\%$ instead of 40% | 145.83 | 8.10 |
+| Five training exposures per transition: $e=5$ | 218.75 | 2.43 |
+| Only 10% residual real data: $\alpha=0.1$ | 218.75 | 1.22 |
+| Accounting rate 2 Hz instead of 10 Hz | 218.75 | 60.76 |
+
+</div>
+
+Three shifts amortize equipment more intensively; paid labor per retained hour is unchanged. This optimistic variant preserves equipment life and maintenance despite additional wear. [Figure already advertises rotating 24/7 shifts](#ref-wage), so one shift is not an industry maximum. The reuse and residual-data rows are arithmetic sensitivities: *neither demonstrates equivalent learning*. The $\alpha$ row prices only the remaining real-data component; newly acquired human/synthetic data would add cost. Changing accounting frequency cannot itself create capability.
+
+### An affordability condition, not an impossibility proof
+
+At base costs, a \$1B acquisition budget buys $10^9/218.75=4.57$ million retained hours. A \$1B cap would therefore rule out the base 8.33M-hour program *under these assumptions*. But the companies' actual data budgets and minimum effective hours are not known. [Tesla reported](#ref-tesla) \$43.524B in cash, equivalents and short-term investments at June 30, 2026; this is company liquidity, not a robotics allocation. [Figure announced](#ref-index) more than \$1B for data and compute combined over the year following August 2026. Neither figure proves a program is affordable or profitable. Economic feasibility additionally requires expected returns, time to revenue, competing capital needs and financing costs.

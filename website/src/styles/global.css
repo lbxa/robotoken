@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  section[id], li[id] { scroll-margin-top: 2rem; }
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+    outline: 2px solid #276e8b;
+    outline-offset: 4px;
+  }
+  h2 {
+    @apply font-light;
+  }
+}
+
+@layer components {
+  .skip-link {
+    position: absolute;
+    top: -5rem;
+    left: 1rem;
+    padding: 0.75rem;
+    background: white;
+    z-index: 10;
+  }
+  .skip-link:focus { top: 1rem; }
+  .table-scroll { overflow-x: auto; }
+  .table-scroll table { min-width: 36rem; }
+  .prose h3 {
+    @apply font-light;
+  }
+
+  .prose mark.important-highlight {
+    display: inline;
+    border-radius: 0.2rem;
+    background-color: rgba(186, 230, 253, 0.68);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    color: inherit;
+    padding: 0.04em 0.14em;
+  }
+}
+
+/* KaTeX creates these classes during MDX rendering, after Tailwind's scan. */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.prose blockquote {
+  max-width: 40rem;
+  margin: 1.75rem auto;
+  border: none;
+  padding-inline: 0;
+  background-color: transparent;
+  text-align: center;
+  font-style: normal;
+}
+
+.prose blockquote p {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman", serif;
+  font-size: 1.08rem;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 640px) {
+  .katex-display > .katex { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

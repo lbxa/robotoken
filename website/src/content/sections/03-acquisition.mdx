@@ -1,0 +1,54 @@
+---
+order: 3
+title: Build the acquisition cost from paid time
+slug: acquisition-cost
+---
+
+All modeled costs are in constant 2026 US dollars. Assume a five-year program ($Y=5$), one operator per active station and $A=2{,}000$ staffed working hours per year (250 days × 8 hours), including setup and resets. Paid-hour labels below refer to this staffed time; paid-leave benefits are already in loaded compensation.
+
+Collection equipment is bought at years 0 and 3: two purchases per station ($n=2$), with zero terminal salvage. Future wages, equipment prices and methods are held constant. There is no assumed future data-market expansion or algorithmic breakthrough.
+
+<div className="table-scroll" role="region" aria-label="Acquisition cost assumptions" tabIndex={0}>
+
+| Input and unit | Low | Base | High |
+| :--- | ---: | ---: | ---: |
+| Loaded operator compensation $w$ (\$/paid hour) | 20 | 45 | 70 |
+| Other collection operations $o$ (\$/paid hour) | 5 | 15 | 30 |
+| Installed collection station $K$ (\$) | 32,000 | 100,000 | 200,000 |
+| Annual maintenance $m$ (fraction of $K$) | 10% | 15% | 20% |
+| Recording share of paid time $\rho$ | 75% | 50% | 33⅓% |
+| Accepted share of recorded time $q$ | 80% | 80% | 60% |
+| Retained share of paid time $u=\rho q$ | 60% | 40% | 20% |
+| Five-year retained hours per station $YAu$ | 6,000 | 4,000 | 2,000 |
+| Five-year cash cost per station (\$) | 330,000 | 875,000 | 1,600,000 |
+| **Cost per retained hour $c$ (\$)** | **55.00** | **218.75** | **800.00** |
+
+</div>
+
+### Evidence versus assumptions
+
+[Figure's current data-creator posting](#ref-wage) starts at \$30/hour before additional compensation/benefits. Using the [BLS](#ref-bls) full-time private-sector wage share of 68.5% gives $30/0.685=43.80$ US dollars; the base rounds to \$45 loaded compensation. This is a proxy, not Figure's actual payroll cost. Low-case \$20 assumes less expensive international recruitment; it is not a quoted US wage. Using \$36 instead in the low case gives \$81.67 per retained hour.
+
+[Mobile ALOHA](#ref-aloha) reports \$32,000 for its research system, including onboard power and compute. The low case deliberately reuses this 2024 nominal figure as an optimistic 2026 assumption, without an inflation uplift; it is not a humanoid price quote. Base/high station costs, maintenance, three-year equipment life, overheads and retention rates are scenario assumptions, not observed Tesla/Figure accounts. They do not represent confidence intervals or equal-capability hardware.
+
+Other operations $o$ cover allocated supervision, setup logistics, facilities, quality assurance, labeling and data handling/storage during the program; operator benefits and equipment maintenance are not counted again. The \$15 base allocation is not an independently measured unit cost. Failures, resets, repairs and setup reduce $\rho$; rejected or duplicate recordings reduce $q$.
+
+For each station, retained output is $YAu$, so:
+
+$$
+c=\frac{YA(w+o)+K(n+Ym)}{YAu},\qquad S=\frac{H}{YAu},\qquad C=Hc.
+$$
+
+The base calculation is fully visible:
+
+$$
+c=\frac{(5)(2{,}000)(45+15)+100{,}000[2+(5)(0.15)]}{(5)(2{,}000)(0.50)(0.80)}
+$$
+
+$$
+=\frac{875{,}000}{4{,}000}=\$218.75.
+$$
+
+### Scope
+
+This is cash expenditure on acquisition, including replacement equipment. It excludes model development/training compute, general R&D, financing, tax, certification and deployment fleets. Instant fleet availability and linear overhead are simplifying assumptions; manufacturing and hiring ramps could extend the schedule. Zero salvage is conservative. These mixed effects mean the estimate is neither a universal floor nor a ceiling.
